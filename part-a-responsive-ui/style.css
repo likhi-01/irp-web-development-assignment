@@ -1,0 +1,307 @@
+
+/* Design Colors */
+:root {
+    --color-primary-navy: #003366;
+    --color-primary-orange: #FE781E;
+    --color-secondary-blue: #5F9FE0;
+    --color-bg-light: #E2F2FD;
+    --color-card-bg: #FFFFFF;
+    --color-border-light: #D6E9FF;
+}
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--color-primary-navy);
+    background-color: var(--color-card-bg);
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    min-height: 75px;
+    padding: 12px 6%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 51, 102, 0.08);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: var(--color-primary-navy);
+    font-size: 23px;
+    font-weight: bold;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--color-primary-navy);
+    font-weight: 600;
+    padding: 8px 0;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--color-primary-orange);
+}
+
+.nav-links a.active {
+    border-bottom: 3px solid var(--color-primary-orange);
+}
+
+.sign-in {
+    text-decoration: none;
+    color: var(--color-primary-orange);
+    border: 2px solid var(--color-primary-orange);
+    border-radius: 8px;
+    padding: 8px 22px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.sign-in:hover {
+    background-color: var(--color-primary-orange);
+    color: white;
+}
+
+/* Hero Section */
+.hero {
+    min-height: 440px;
+    padding: 55px 8%;
+    background-color: var(--color-bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-content {
+    flex: 1;
+}
+
+.hero-kicker {
+    color: var(--color-primary-orange);
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    color: var(--color-primary-navy);
+    font-size: 42px;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: var(--color-primary-orange);
+}
+
+.hero-description {
+    color: #42566B;
+    font-size: 16px;
+    max-width: 550px;
+    margin-bottom: 28px;
+}
+
+.explore-button {
+    display: inline-block;
+    background-color: var(--color-primary-orange);
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.explore-button:hover {
+    background-color: #e96712;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 470px;
+    height: auto;
+    object-fit: contain;
+}
+
+/* Learning Journey Section */
+.journey {
+    padding: 65px 6%;
+    text-align: center;
+}
+
+.section-heading h2 {
+    color: var(--color-primary-navy);
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.section-heading p {
+    color: var(--color-secondary-blue);
+    font-size: 16px;
+    margin-bottom: 35px;
+}
+
+.journey-cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: var(--color-card-bg);
+    border: 1px solid var(--color-border-light);
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 51, 102, 0.10);
+}
+
+.step-number {
+    display: block;
+    color: var(--color-primary-orange);
+    font-size: 27px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: var(--color-primary-navy);
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #526477;
+    font-size: 14px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--color-primary-navy);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Tablet Responsive Design */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .journey-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 5%;
+        min-height: 65px;
+    }
+
+    .brand {
+        font-size: 19px;
+    }
+
+    .brand img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .sign-in {
+        padding: 7px 14px;
+        font-size: 14px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 6%;
+        gap: 25px;
+    }
+
+    .hero h1 {
+        font-size: 30px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .hero-image img {
+        max-width: 100%;
+    }
+
+    .journey {
+        padding: 45px 6%;
+    }
+
+    .section-heading h2 {
+        font-size: 27px;
+    }
+
+    .journey-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
